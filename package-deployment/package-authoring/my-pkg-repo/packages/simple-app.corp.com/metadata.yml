@@ -1,0 +1,11 @@
+---
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: PackageMetadata
+metadata:
+  name: simple-app.corp.com
+spec:
+  displayName: "Simple Package App"
+  longDescription: "Simple app consisting of a k8s deployment and service"
+  shortDescription: "Simple App for deploying"
+  categories:
+  - demo

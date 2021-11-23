@@ -1,0 +1,29 @@
+#@ load("@ytt:data", "data")  # for reading data values (generated via ytt's data-values-schema-inspect mode).
+#@ load("@ytt:yaml", "yaml")  # for dynamically decoding the output of ytt's data-values-schema-inspect
+---
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: #@ "simple-app.corp.com." + data.values.version
+spec:
+  refName: simple-app.corp.com
+  version: #@ data.values.version
+  releaseNotes: |
+        Initial release of the simple app package
+  valuesSchema:
+    openAPIv3: #@ yaml.decode(data.values.openapi)
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: index.docker.io/vnarayanan/simple-package@sha256:8b199051061fcfef126446e82ddcf024c3c014b150a7fd916b62fe246eb3798b
+      template:
+      - ytt:
+          paths:
+          - "config/"
+      - kbld:
+          paths:
+          - "-"
+          - ".imgpkg/images.yml"
+      deploy:
+      - kapp: {}
