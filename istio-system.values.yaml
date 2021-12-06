@@ -1,0 +1,7 @@
+#! this is a values file for ./ns-rbac that creates the istio-system Namespace
+---
+createNs: true
+namespace: istio-system
+serviceAccount: kapp-cluster-admin
+clusterRole: cluster-admin
+clusterRoleBind: true

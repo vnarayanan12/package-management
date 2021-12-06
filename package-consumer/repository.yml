@@ -2,7 +2,7 @@
 apiVersion: packaging.carvel.dev/v1alpha1
 kind: PackageRepository
 metadata:
-  name: simple-package-repository
+  name: simple-package-repo
   namespace: default
 spec:
   fetch:

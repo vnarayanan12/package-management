@@ -1,0 +1,10 @@
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageRepository
+metadata:
+  name: collosus-package
+  namespace: apps-mgmt
+spec:
+  fetch:
+    imgpkgBundle:
+      image: index.docker.io/vnarayanan/collosus-repo@sha256:c3e1baf29aa1ec0787d3b97cfd92db5ca25d7611d55f374da9d66c1011bef519

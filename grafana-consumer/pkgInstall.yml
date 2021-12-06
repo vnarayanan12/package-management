@@ -2,11 +2,12 @@
 apiVersion: packaging.carvel.dev/v1alpha1
 kind: PackageInstall
 metadata:
-  name: pkg-demo
+  name: grafana
   namespace: default
 spec:
   serviceAccountName: default-ns-sa
   packageRef:
-    refName: simple-app.corp.com
+    refName: collosus.gov
     versionSelection:
       constraints: 1.0.0
+  

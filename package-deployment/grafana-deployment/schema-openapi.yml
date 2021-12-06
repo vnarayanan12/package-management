@@ -1,0 +1,6 @@
+path: /colossus-service-mesh/grafana
+svc_port: 3000
+target_port: 3000
+app_name: grafana
+name_space: istio-system
+version: 7.2.1
